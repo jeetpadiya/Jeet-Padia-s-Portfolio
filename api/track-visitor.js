@@ -38,6 +38,7 @@ export default async function handler(request, response) {
     return response.status(500).json({
       ok: false,
       error: "Failed to store visitor",
+      details: error instanceof Error ? error.message : String(error),
     });
   }
 }
