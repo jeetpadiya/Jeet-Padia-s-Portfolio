@@ -1,4 +1,4 @@
-import { getDatabase } from "./_lib/mongodb.js";
+import { ensureVisitorIndexes, getDatabase } from "./_lib/mongodb.js";
 import { buildVisitorDocument } from "./_lib/visitor-details.js";
 
 export default async function handler(request, response) {
@@ -23,6 +23,7 @@ export default async function handler(request, response) {
     const database = await getDatabase();
     const collectionName =
       process.env.MONGODB_VISITORS_COLLECTION || "visitors";
+    await ensureVisitorIndexes(collectionName);
     const result = await database
       .collection(collectionName)
       .insertOne(visitor);
