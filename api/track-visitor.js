@@ -1,5 +1,3 @@
-export const runtime = "nodejs";
-
 function getClientIp(request) {
   const forwardedFor = request.headers.get("x-forwarded-for");
 
@@ -14,11 +12,7 @@ function getClientIp(request) {
   );
 }
 
-export default async function handler(request) {
-  if (request.method !== "POST") {
-    return Response.json({ error: "Method not allowed" }, { status: 405 });
-  }
-
+export async function POST(request) {
   let body = {};
 
   try {
@@ -39,5 +33,12 @@ export default async function handler(request) {
 
   return Response.json({
     ok: true,
+  });
+}
+
+export function GET() {
+  return Response.json({
+    ok: true,
+    message: "Visitor tracking endpoint is running.",
   });
 }
