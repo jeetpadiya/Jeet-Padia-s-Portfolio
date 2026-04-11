@@ -1,30 +1,5 @@
-function readHeader(request, headerName) {
-  if (!request || !request.headers) {
-    return undefined;
-  }
-
-  if (typeof request.headers.get === "function") {
-    return request.headers.get(headerName) || undefined;
-  }
-
-  const lowerCaseHeaderName = headerName.toLowerCase();
-
-  return request.headers[lowerCaseHeaderName] || request.headers[headerName];
-}
-
-function getClientIp(request) {
-  const forwardedFor = readHeader(request, "x-forwarded-for");
-
-  if (forwardedFor) {
-    return forwardedFor.split(",")[0].trim();
-  }
-
-  return (
-    readHeader(request, "x-real-ip") ||
-    readHeader(request, "x-vercel-forwarded-for") ||
-    "unknown"
-  );
-}
+import { getDatabase } from "./_lib/mongodb.js";
+import { buildVisitorDocument } from "./_lib/visitor-details.js";
 
 export default async function handler(request, response) {
   if (request.method === "GET") {
@@ -43,17 +18,25 @@ export default async function handler(request, response) {
   const body =
     request.body && typeof request.body === "object" ? request.body : {};
 
-  const visitor = {
-    ip: getClientIp(request),
-    path: typeof body.path === "string" ? body.path : "/",
-    referer: readHeader(request, "referer") || "direct",
-    userAgent: readHeader(request, "user-agent") || "unknown",
-    visitedAt: new Date().toISOString(),
-  };
+  try {
+    const visitor = buildVisitorDocument(request, body);
+    const database = await getDatabase();
+    const collectionName =
+      process.env.MONGODB_VISITORS_COLLECTION || "visitors";
+    const result = await database
+      .collection(collectionName)
+      .insertOne(visitor);
 
-  console.log("Portfolio visitor", JSON.stringify(visitor));
+    return response.status(200).json({
+      ok: true,
+      id: result.insertedId,
+    });
+  } catch (error) {
+    console.error("Failed to store visitor", error);
 
-  return response.status(200).json({
-    ok: true,
-  });
+    return response.status(500).json({
+      ok: false,
+      error: "Failed to store visitor",
+    });
+  }
 }
