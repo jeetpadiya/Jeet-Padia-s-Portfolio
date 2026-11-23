@@ -116,7 +116,8 @@ const Home = () => {
             </button>
 
             <a
-              href="/JeetPadia_Full_Sack_Developer.pdf"
+              href="/JeetPadia_Full_Stack_Developer.pdf"
+              download="JeetPadia_Full_Stack_Developer.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded border border-zinc-800 bg-zinc-900/60 px-4 py-2 text-zinc-300 transition hover:border-zinc-700 hover:text-white"

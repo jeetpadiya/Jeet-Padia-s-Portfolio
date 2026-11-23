@@ -73,7 +73,8 @@ const Navbar = () => {
           </a>
 
           <a
-            href="/JeetPadia_Full_Sack_Developer.pdf"
+            href="/JeetPadia_Full_Stack_Developer.pdf"
+            download="JeetPadia_Full_Stack_Developer.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded border border-amber-500/30 bg-amber-500/10 px-3 py-1 font-mono text-xs font-semibold text-amber-400 hover:bg-amber-500/20 transition"
@@ -116,7 +117,8 @@ const Navbar = () => {
             })}
             <div className="pt-2 border-t border-zinc-800 flex items-center justify-between">
               <a
-                href="/JeetPadia_Full_Sack_Developer.pdf"
+                href="/JeetPadia_Full_Stack_Developer.pdf"
+                download="JeetPadia_Full_Stack_Developer.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs text-amber-400 py-1"

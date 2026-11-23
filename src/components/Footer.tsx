@@ -146,7 +146,8 @@ const Footer = () => {
 
             <div className="pt-2">
               <a
-                href="/JeetPadia_Full_Sack_Developer.pdf"
+                href="/JeetPadia_Full_Stack_Developer.pdf"
+                download="JeetPadia_Full_Stack_Developer.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-xs text-amber-400 hover:underline"
