@@ -4,39 +4,61 @@ const Footer = () => {
   const navigate = useNavigate()
 
   return (
-    <footer className="relative mt-24 border-t border-zinc-800/80 bg-[#08090a]">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+    <footer className="relative mt-20 border-t border-zinc-800 bg-[#07080a] font-mono">
+      {/* Telemetry Strip */}
+      <div className="border-b border-zinc-850 bg-[#090a0d] px-4 py-2 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 text-[11px] text-zinc-500">
+          <div className="flex items-center gap-3">
+            <span className="flex items-center gap-1.5 text-emerald-400">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              STATUS: NOMINAL
+            </span>
+            <span className="text-zinc-700">|</span>
+            <span>NODE: IN-WEST (AHMEDABAD)</span>
+            <span className="text-zinc-700">|</span>
+            <span>TIMEZONE: IST (UTC+05:30)</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-zinc-400">STACK: REACT 19 / TS / NODE</span>
+            <span className="text-zinc-700">|</span>
+            <span className="text-amber-400">BUILD: v2.4.0</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 text-left">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: Identity */}
           <div className="space-y-3">
-            <div className="flex items-center gap-2.5">
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900 font-mono text-xs font-semibold text-zinc-300">
+            <div className="flex items-center gap-2">
+              <div className="flex h-6 w-6 items-center justify-center rounded border border-zinc-800 bg-zinc-900 text-xs font-semibold text-amber-400">
                 JP
               </div>
-              <span className="text-sm font-semibold tracking-tight text-zinc-200">Jeet Padia</span>
+              <span className="text-sm font-semibold text-zinc-200">JEET PADIA</span>
             </div>
-            <p className="text-xs leading-5 text-zinc-400">
-              Full-stack engineer specializing in Next.js, Node.js, multi-tenant SaaS, and RAG/AI pipelines with LangChain.
+            <p className="text-xs leading-relaxed text-zinc-400 font-sans">
+              Full-stack software engineer specializing in multi-tenant SaaS architecture, legal RAG pipelines, and high-performance web applications.
             </p>
-            <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500/80" />
-              <span>Available for new projects</span>
+            <div className="text-[11px] text-emerald-400">
+              ● OPEN FOR FULL-TIME ROLES
             </div>
           </div>
 
-          {/* Column 2: Navigation */}
+          {/* Column 2: Index */}
           <div>
-            <p className="font-mono text-[11px] uppercase tracking-wider text-zinc-400">Index</p>
-            <ul className="mt-3 space-y-2 text-xs text-zinc-400">
+            <p className="text-[11px] uppercase tracking-wider text-amber-400 font-semibold mb-3">
+              [INDEX // ROUTES]
+            </p>
+            <ul className="space-y-2 text-xs text-zinc-400">
               <li>
                 <button
                   onClick={() => {
                     navigate("/")
                     window.scrollTo({ top: 0, behavior: "smooth" })
                   }}
-                  className="cursor-pointer hover:text-white transition-colors"
+                  className="cursor-pointer hover:text-amber-400 transition"
                 >
-                  Home
+                  [01] // OVERVIEW
                 </button>
               </li>
               <li>
@@ -45,9 +67,9 @@ const Footer = () => {
                     navigate("/projects")
                     window.scrollTo({ top: 0, behavior: "smooth" })
                   }}
-                  className="cursor-pointer hover:text-white transition-colors"
+                  className="cursor-pointer hover:text-amber-400 transition"
                 >
-                  Projects & AI Tools
+                  [02] // PROJECT_DOSSIERS
                 </button>
               </li>
               <li>
@@ -56,9 +78,9 @@ const Footer = () => {
                     navigate("/about")
                     window.scrollTo({ top: 0, behavior: "smooth" })
                   }}
-                  className="cursor-pointer hover:text-white transition-colors"
+                  className="cursor-pointer hover:text-amber-400 transition"
                 >
-                  About & Experience
+                  [03] // CAREER_CHANGELOG
                 </button>
               </li>
               <li>
@@ -67,76 +89,82 @@ const Footer = () => {
                     navigate("/contact")
                     window.scrollTo({ top: 0, behavior: "smooth" })
                   }}
-                  className="cursor-pointer hover:text-white transition-colors"
+                  className="cursor-pointer hover:text-amber-400 transition"
                 >
-                  Contact
+                  [04] // DIRECT_UPLINK
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Stack */}
+          {/* Column 3: Architecture Layers */}
           <div>
-            <p className="font-mono text-[11px] uppercase tracking-wider text-zinc-400">Stack</p>
-            <ul className="mt-3 space-y-1.5 text-xs text-zinc-400 font-mono">
-              <li>Next.js & React 19</li>
-              <li>LangChain & RAG</li>
-              <li>Vector DBs & Embeddings</li>
-              <li>Node.js & Express</li>
-              <li>TanStack Query & TS</li>
+            <p className="text-[11px] uppercase tracking-wider text-amber-400 font-semibold mb-3">
+              [SYSTEM_LAYERS]
+            </p>
+            <ul className="space-y-1.5 text-xs text-zinc-400">
+              <li>L1: LangChain &amp; RAG Pipelines</li>
+              <li>L2: Next.js &amp; TanStack Query</li>
+              <li>L3: Multi-Tenant RBAC &amp; Node</li>
+              <li>L4: MongoDB &amp; PostgreSQL</li>
+              <li>L5: Docker &amp; Linux Environments</li>
             </ul>
           </div>
 
-          {/* Column 4: Links */}
+          {/* Column 4: Uplink & Resume */}
           <div className="space-y-3">
-            <p className="font-mono text-[11px] uppercase tracking-wider text-zinc-400">Network</p>
+            <p className="text-[11px] uppercase tracking-wider text-amber-400 font-semibold">
+              [NETWORK // CHANNELS]
+            </p>
             <div className="flex gap-2">
               <a
                 href="https://github.com/jeetpadiya"
                 target="_blank"
                 rel="noreferrer"
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/60 text-zinc-400 transition hover:border-zinc-700 hover:text-white"
-                aria-label="GitHub"
+                className="flex h-8 items-center gap-1.5 rounded border border-zinc-800 bg-zinc-900/60 px-2.5 text-xs text-zinc-400 transition hover:border-zinc-700 hover:text-white"
+                aria-label="GitHub Profile"
               >
-                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 .5a12 12 0 0 0-3.8 23.38c.6.1.82-.26.82-.58v-2.03c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.33-1.74-1.33-1.74-1.08-.73.08-.72.08-.72 1.2.08 1.83 1.2 1.83 1.2 1.05 1.8 2.76 1.28 3.43.98.1-.75.42-1.27.75-1.56-2.67-.3-5.47-1.3-5.47-5.9 0-1.3.47-2.37 1.22-3.2-.12-.3-.53-1.52.12-3.16 0 0 1-.31 3.3 1.22a11.76 11.76 0 0 1 6 0c2.3-1.53 3.3-1.22 3.3-1.22.65 1.64.24 2.86.12 3.16.76.83 1.22 1.9 1.22 3.2 0 4.61-2.8 5.6-5.48 5.9.43.37.81 1.08.81 2.2v3.26c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z" />
-                </svg>
+                <span>GH</span>
               </a>
               <a
                 href="https://www.linkedin.com/in/jeet-padia-719557274/"
                 target="_blank"
                 rel="noreferrer"
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/60 text-zinc-400 transition hover:border-zinc-700 hover:text-white"
-                aria-label="LinkedIn"
+                className="flex h-8 items-center gap-1.5 rounded border border-zinc-800 bg-zinc-900/60 px-2.5 text-xs text-zinc-400 transition hover:border-zinc-700 hover:text-white"
+                aria-label="LinkedIn Profile"
               >
-                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.96 1.96 0 1 0 5.3 6.92 1.96 1.96 0 0 0 5.25 3Zm15.19 9.87c0-3.46-1.85-5.07-4.32-5.07a3.75 3.75 0 0 0-3.37 1.86V8.5H9.38V20h3.37v-6.2c0-1.63.31-3.2 2.33-3.2 1.99 0 2.02 1.86 2.02 3.3V20h3.34v-7.13Z" />
-                </svg>
+                <span>IN</span>
               </a>
               <a
                 href="mailto:jeetpadiya4@gmail.com"
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/60 text-zinc-400 transition hover:border-zinc-700 hover:text-white"
-                aria-label="Email"
+                className="flex h-8 items-center gap-1.5 rounded border border-zinc-800 bg-zinc-900/60 px-2.5 text-xs text-zinc-400 transition hover:border-zinc-700 hover:text-white"
+                aria-label="Email Jeet Padia"
               >
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+                <span>MAIL</span>
               </a>
             </div>
-            <a
-              href="/Jeet_padia_full_stack_developer.pdf"
-              download="Jeet_padia_full_stack_developer.pdf"
-              className="inline-block text-xs font-mono text-zinc-400 hover:text-zinc-200 transition-colors"
-            >
-              ↓ download resume.pdf
-            </a>
+
+            <div className="pt-2">
+              <a
+                href="/Jeet_padia_full_stack_developer.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-xs text-amber-400 hover:underline"
+              >
+                <span>↓ GET CV_SPEC.PDF</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Line */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-zinc-800/80 pt-6 sm:flex-row text-xs text-zinc-500 font-mono">
-          <p>© {new Date().getFullYear()} Jeet Padia. All rights reserved.</p>
-          <p>Designed with craft & simplicity</p>
+        {/* Bottom Bar */}
+        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-zinc-800/80 pt-6 sm:flex-row text-[11px] text-zinc-500">
+          <p>© {new Date().getFullYear()} JEET PADIA. ALL SYSTEMS RECORDED.</p>
+          <div className="flex items-center gap-3">
+            <span>ENGINEERED WITH REACT 19 &amp; TAILWIND</span>
+            <span>•</span>
+            <span className="text-zinc-400">NO AI SLOP // PURE SPEC</span>
+          </div>
         </div>
       </div>
     </footer>
