@@ -282,7 +282,7 @@ const About = () => {
           </p>
         </div>
         <a
-          href="/Jeet_padia_full_stack_developer.pdf"
+          href="/JeetPadia_Full_Sack_Developer.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="cursor-pointer inline-flex items-center gap-2 rounded border border-amber-500/80 bg-amber-500/10 px-4 py-2 text-xs font-semibold text-amber-400 hover:bg-amber-500/20 transition whitespace-nowrap"
