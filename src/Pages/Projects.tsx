@@ -92,7 +92,7 @@ const dossiers: ProjectDossier[] = [
     stack: ["React", "State Management", "Tailwind CSS", "Vite"],
     liveUrl: "https://q-a-master.vercel.app/",
     sourceUrl: "https://github.com/jeetpadiya",
-    image: "/projects/qa-master.png",
+    image: "/projects/qa.png",
   },
   {
     id: "DOSSIER_06",
@@ -108,7 +108,7 @@ const dossiers: ProjectDossier[] = [
     stack: ["React", "Dashboard UI", "Feed Architecture", "REST APIs"],
     liveUrl: "https://social-media-app-zuno.vercel.app/",
     sourceUrl: "https://github.com/jeetpadiya",
-    image: "/projects/social-media-app.png",
+    image: "/projects/zuno.png",
   },
 ]
 
