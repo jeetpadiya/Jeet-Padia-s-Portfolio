@@ -45,6 +45,7 @@ const dossiers: ProjectDossier[] = [
     stack: ["Next.js", "React", "TanStack Query", "MongoDB", "RBAC Auth", "REST APIs", "Cloudinary"],
     liveUrl: "https://talent-node.vercel.app/",
     sourceUrl: "https://github.com/jeetpadiya",
+    image: "/projects/talentnode.jpeg",
   },
   {
     id: "DOSSIER_03",
