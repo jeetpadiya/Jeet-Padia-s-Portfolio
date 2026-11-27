@@ -466,20 +466,17 @@ const Home = () => {
           {/* Dossier 02: Talent Node */}
           <div className="rounded-lg border border-zinc-800 bg-[#090a0d] p-5 font-mono transition hover:border-zinc-700">
             <div className="flex items-center justify-between text-xs text-zinc-500 pb-3 border-b border-zinc-800/80 mb-3">
-              <span className="text-cyan-400 font-semibold">DOSSIER_02 // ENTERPRISE ATS</span>
-              <span className="rounded bg-amber-500/10 px-1.5 py-0.5 text-[10px] text-amber-400 border border-amber-500/20">
+              <span className="text-cyan-400 font-semibold">DOSSIER_02 // TALENT NODE</span>
+              <span className="rounded bg-cyan-500/10 px-1.5 py-0.5 text-[10px] text-cyan-400 border border-cyan-500/20">
                 ENTERPRISE SAAS
               </span>
             </div>
             <h3 className="text-base font-semibold text-zinc-100 font-sans mb-2">
               Multi-Tenant Applicant Tracking System
             </h3>
-            <p className="text-xs text-zinc-400 leading-relaxed font-sans mb-3">
-              Commercial recruitment platform with role-based access control (RBAC), multi-stage candidate pipeline tracking, and TanStack Query state caching.
+            <p className="text-xs text-zinc-400 leading-relaxed font-sans mb-4">
+              Full recruitment lifecycle platform with role-based access control (RBAC), multi-stage candidate pipeline tracking, and TanStack Query state caching.
             </p>
-            <div className="mb-4 rounded border border-amber-500/20 bg-amber-500/5 p-2.5 text-[10px] text-amber-300/90">
-              🔒 Proprietary company platform currently under active deployment. Public URL and source repository restricted.
-            </div>
             <div className="text-[11px] text-zinc-500 mb-3 flex flex-wrap gap-1.5">
               <span className="rounded bg-zinc-900 border border-zinc-800 px-2 py-0.5 text-zinc-300">Next.js</span>
               <span className="rounded bg-zinc-900 border border-zinc-800 px-2 py-0.5 text-zinc-300">TanStack Query</span>
@@ -487,13 +484,15 @@ const Home = () => {
               <span className="rounded bg-zinc-900 border border-zinc-800 px-2 py-0.5 text-zinc-300">RBAC</span>
             </div>
             <div className="pt-2 border-t border-zinc-800/80 flex items-center justify-between text-xs">
-              <span className="text-amber-400 text-[11px]">STATUS: UNDER_DEPLOYMENT</span>
-              <button
-                onClick={() => navigate("/projects")}
-                className="cursor-pointer text-amber-400 hover:text-amber-300 transition"
+              <span className="text-emerald-400 text-[11px]">STATUS: LIVE_PRODUCTION</span>
+              <a
+                href="https://talent-node.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-400 hover:underline"
               >
-                VIEW_SPECS ❯
-              </button>
+                DEPLOYMENT ↗
+              </a>
             </div>
           </div>
         </div>

@@ -33,18 +33,18 @@ const dossiers: ProjectDossier[] = [
   },
   {
     id: "DOSSIER_02",
-    title: "Enterprise Multi-Tenant ATS (Talent Node)",
+    title: "Talent Node — Multi-Tenant ATS",
     category: "saas",
     categoryLabel: "ENTERPRISE SAAS",
-    status: "UNDER_DEPLOYMENT",
-    statusColor: "text-amber-400 bg-amber-400/10 border-amber-400/20",
+    status: "LIVE_PRODUCTION",
+    statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
     description:
-      "A commercial multi-tenant Applicant Tracking System engineered to automate enterprise hiring lifecycles. Manages tenant organization partitions, public job boards, applicant profile ingestion, and multi-stage interview workflows with dedicated access tiers for Admins, Hiring Managers, and Candidates.",
+      "A multi-tenant Applicant Tracking System engineered to automate end-to-end hiring lifecycles. Manages tenant organization partitions, public job boards, applicant profile ingestion, and multi-stage interview workflows with dedicated access tiers for Admins, Hiring Managers, and Candidates.",
     architectureHighlight:
       "Engineered tenant data isolation in MongoDB with role-based authorization (RBAC) middleware. Implemented client-side caching and optimistic updates via TanStack Query, eliminating redundant API polling by 35% across high-frequency candidate stage transitions.",
     stack: ["Next.js", "React", "TanStack Query", "MongoDB", "RBAC Auth", "REST APIs", "Cloudinary"],
-    notice:
-      "Proprietary company product currently under active deployment and client rollout. Live dashboard links and source repositories remain restricted under company policy.",
+    liveUrl: "https://talent-node.vercel.app/",
+    sourceUrl: "https://github.com/jeetpadiya",
   },
   {
     id: "DOSSIER_03",
